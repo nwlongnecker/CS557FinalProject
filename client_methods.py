@@ -17,12 +17,21 @@ def ask_question(peer_name):
 		print("Host not found")
 		return
 
-	yesNum = str(random.random())
-	noNum = str(random.random())
-
 	#Question string should not have any network_protocol.SEPARATOR in it. (No semicolons)
 	question = "Am I invited to the party?"
-	print("Asking", question)
+	print("Asking:", question)
+
+	answer = send_question(peer_name, question, host_location)
+	# print the response
+	if(answer):
+		print(question, "->", "Yes")
+	else:
+		print(question, "->", "No")
+
+def send_question(peer_name, question, host_location):
+
+	yesNum = str(random.random())
+	noNum = str(random.random())
 
 	# Connect to the appropriate host
 	net = client_side_connection.ClientSideConnection(
@@ -32,13 +41,13 @@ def ask_question(peer_name):
 	queryString = question + network_protocol.SEPARATOR + yesNum + network_protocol.SEPARATOR + noNum
 	net.send(queryString)
 
-	# print the response
 	answer = net.recv()
+	net.done()
+
 	if(answer == yesNum):
-		print(question, "->", "Yes")
+		return True
 	elif(answer == noNum):
-		print(question, "->", "No")
+		return False
 	else:
 		print("Something went wrong")
-
-	net.done()
+		return False
