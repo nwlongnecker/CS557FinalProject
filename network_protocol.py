@@ -1,6 +1,7 @@
 import socket
 
 BLOCK_LEN = 1024
+SEPARATOR = ";"
 
 def send(socket, message):
 	# Send the length of the message.

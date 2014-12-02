@@ -14,28 +14,7 @@ while True:
 
 	command = net.recv()
 
-	if(command == 'Store'):
-		server_methods.storeFile(peer_name, net)
-
-	elif(command == 'Retrieve'):
-		server_methods.retrieveFile(peer_name, net)
-
-	elif(command == 'Delete'):
-		server_methods.deleteFile(peer_name, net)
-
-	elif(command == 'My_Files'):
-		server_methods.getFilenames(peer_name, net)
-
-	elif(command == 'Add_Authorization'):
-		server_methods.addAuthorization(peer_name, net)
-
-	elif(command == 'Delete_Authorization'):
-		server_methods.deleteAuthorization(peer_name, net)
-
-	elif(command == 'Add_Group_Member'):
-		server_methods.addGroupMember(peer_name, net)
-
-	elif(command == 'Delete_Group_Member'):
-		server_methods.deleteGroupMember(peer_name, net)
+	if(command == 'Query'):
+		server_methods.answerQuestion(peer_name, net)
 
 	net.done()
