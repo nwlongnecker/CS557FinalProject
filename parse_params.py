@@ -1,6 +1,7 @@
 import getopt
 import sys
 import os.path
+import getpass
 
 def getUsername(server_side):
 	if server_side:
@@ -27,13 +28,16 @@ def getUsername(server_side):
 	elif not peerNameValid(peer_name):
 		print('Could not find key and certificate for that user')
 		print('Files expected:')
-		print('CA/' + peer_name + '/' + peer_name + '.crt')
-		print('CA/' + peer_name + '/' + peer_name + '.key')
+		print('entities/' + peer_name + '/' + peer_name + '.crt')
+		print('entities/' + peer_name + '/' + peer_name + '.key')
 		sys.exit()
 	return peer_name
+
+def getPassword():
+	return getpass.getpass(prompt = 'Enter PEM pass phrase:')
 
 def usage(mode):
 	print(mode + '.py -u <username>')
 
 def peerNameValid(peer_name):
-	return os.path.isfile('CA/' + peer_name + '/' + peer_name + '.crt') and os.path.isfile('CA/' + peer_name + '/' + peer_name + '.key')
+	return os.path.isfile('entities/' + peer_name + '/' + peer_name + '.crt') and os.path.isfile('entities/' + peer_name + '/' + peer_name + '.key')

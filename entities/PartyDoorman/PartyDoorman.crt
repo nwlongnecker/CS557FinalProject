@@ -1,0 +1,82 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 11 (0xb)
+        Signature Algorithm: md5WithRSAEncryption
+        Issuer: C=US, ST=Massachusetts, L=Worcester, O=cs557, O=Nathan Longnecker, CN=nwlCA
+        Validity
+            Not Before: Dec  6 04:51:20 2014 GMT
+            Not After : Dec  6 04:51:20 2015 GMT
+        Subject: C=US, ST=Massachusetts, O=cs557, O=Nathan Longnecker, CN=PartyDoorman
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (2048 bit)
+                Modulus (2048 bit):
+                    00:be:a3:a1:ff:2f:88:f8:61:51:cb:78:66:b4:d3:
+                    e0:cd:46:39:21:2d:ff:82:16:d9:c2:ab:50:91:8f:
+                    a7:52:f7:30:a1:fc:9e:58:bb:22:38:50:e2:f2:eb:
+                    84:51:1a:e1:ae:90:86:15:ab:c9:3b:08:22:31:6f:
+                    c5:52:49:ed:ae:e9:b2:66:0b:25:09:40:3c:00:e1:
+                    48:e1:42:89:41:05:3b:08:32:62:63:ef:10:b5:a1:
+                    18:b7:92:3c:93:2d:1f:05:bf:8f:77:ee:b0:b2:df:
+                    41:b1:98:aa:8c:01:18:9a:d1:0c:32:f6:41:cc:3b:
+                    31:c7:17:76:e9:13:52:86:bd:c5:f1:e1:d0:9f:a9:
+                    d0:6a:ec:e1:49:fa:5a:a9:e2:c3:04:c4:d3:c9:27:
+                    a1:09:11:0d:eb:be:68:c7:75:ef:5b:86:a5:64:16:
+                    75:9e:23:94:05:e6:47:30:6e:52:9d:5f:6b:40:2c:
+                    33:48:ba:64:9d:be:03:dc:86:7e:01:a2:e1:72:de:
+                    cf:2b:24:df:37:ca:c3:73:46:3e:02:b5:8e:35:3e:
+                    58:ce:40:bc:ef:c8:25:47:51:f8:1d:81:99:7e:c5:
+                    f1:0a:69:98:49:70:df:f4:dc:78:23:1b:e6:ed:16:
+                    b5:d7:7d:8f:9a:98:2f:73:e9:3a:41:48:ff:bd:f8:
+                    96:59
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                FE:B4:18:D2:25:AF:4F:38:0D:BD:8F:74:41:4C:86:83:DF:C9:E7:30
+            X509v3 Authority Key Identifier: 
+                keyid:CD:08:F0:23:C2:EB:4A:1C:50:93:5E:BD:0B:BC:FB:8F:C9:6B:8F:50
+
+    Signature Algorithm: md5WithRSAEncryption
+        9e:a8:46:9c:81:84:0e:b7:fe:da:8d:9f:39:82:d7:1f:6b:ad:
+        9f:50:fb:a4:09:66:a3:a3:cd:d1:4f:00:9c:82:c0:59:b6:d9:
+        68:b9:db:30:3e:be:e9:27:5e:0c:51:3f:40:e8:e9:fc:aa:5b:
+        8f:94:b9:2d:67:21:09:b4:94:e0:67:e3:77:6c:83:55:ba:7c:
+        11:e0:f6:da:04:72:39:11:91:2b:ce:26:3c:34:ab:fa:a8:4e:
+        0b:43:b1:ca:7a:3b:8b:6d:2b:f4:18:27:6d:09:83:d2:8f:83:
+        97:79:2c:6c:62:13:e3:da:28:a3:d0:1e:c1:2f:9c:05:a2:e9:
+        74:da:ab:2a:c8:5a:e5:11:7b:0d:59:95:d4:71:b4:fc:d7:c8:
+        e1:67:89:7e:88:1a:7d:aa:1b:49:d1:23:29:36:af:00:24:6d:
+        0d:05:13:e2:cb:e7:cc:21:f2:da:d0:cb:a2:78:30:59:b4:a0:
+        81:2e:4f:da:96:a0:a0:40:75:57:7d:18:d3:ae:cc:0d:5f:a9:
+        d6:b0:f3:ba:62:1e:8b:75:57:95:5b:cd:99:15:00:20:18:c8:
+        53:01:d4:9c:bf:a7:c3:b5:80:45:03:1b:2f:f8:30:79:b4:f8:
+        b8:78:bb:27:16:b3:35:7c:3a:75:e5:7d:27:0d:6f:54:a2:26:
+        ed:16:b3:3a
+-----BEGIN CERTIFICATE-----
+MIID0zCCArugAwIBAgIBCzANBgkqhkiG9w0BAQQFADB1MQswCQYDVQQGEwJVUzEW
+MBQGA1UECAwNTWFzc2FjaHVzZXR0czESMBAGA1UEBwwJV29yY2VzdGVyMQ4wDAYD
+VQQKDAVjczU1NzEaMBgGA1UECgwRTmF0aGFuIExvbmduZWNrZXIxDjAMBgNVBAMM
+BW53bENBMB4XDTE0MTIwNjA0NTEyMFoXDTE1MTIwNjA0NTEyMFowaDELMAkGA1UE
+BhMCVVMxFjAUBgNVBAgMDU1hc3NhY2h1c2V0dHMxDjAMBgNVBAoMBWNzNTU3MRow
+GAYDVQQKDBFOYXRoYW4gTG9uZ25lY2tlcjEVMBMGA1UEAwwMUGFydHlEb29ybWFu
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvqOh/y+I+GFRy3hmtNPg
+zUY5IS3/ghbZwqtQkY+nUvcwofyeWLsiOFDi8uuEURrhrpCGFavJOwgiMW/FUknt
+rumyZgslCUA8AOFI4UKJQQU7CDJiY+8QtaEYt5I8ky0fBb+Pd+6wst9BsZiqjAEY
+mtEMMvZBzDsxxxd26RNShr3F8eHQn6nQauzhSfpaqeLDBMTTySehCREN675ox3Xv
+W4alZBZ1niOUBeZHMG5SnV9rQCwzSLpknb4D3IZ+AaLhct7PKyTfN8rDc0Y+ArWO
+NT5YzkC878glR1H4HYGZfsXxCmmYSXDf9Nx4Ixvm7Ra1132Pmpgvc+k6QUj/vfiW
+WQIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdl
+bmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU/rQY0iWvTzgNvY90QUyGg9/J
+5zAwHwYDVR0jBBgwFoAUzQjwI8LrShxQk169C7z7j8lrj1AwDQYJKoZIhvcNAQEE
+BQADggEBAJ6oRpyBhA63/tqNnzmC1x9rrZ9Q+6QJZqOjzdFPAJyCwFm22Wi52zA+
+vuknXgxRP0Do6fyqW4+UuS1nIQm0lOBn43dsg1W6fBHg9toEcjkRkSvOJjw0q/qo
+TgtDscp6O4ttK/QYJ20Jg9KPg5d5LGxiE+PaKKPQHsEvnAWi6XTaqyrIWuURew1Z
+ldRxtPzXyOFniX6IGn2qG0nRIyk2rwAkbQ0FE+LL58wh8trQy6J4MFm0oIEuT9qW
+oKBAdVd9GNOuzA1fqdaw87piHot1V5VbzZkVACAYyFMB1Jy/p8O1gEUDGy/4MHm0
++Lh4uycWszV8OnXlfScNb1SiJu0Wszo=
+-----END CERTIFICATE-----

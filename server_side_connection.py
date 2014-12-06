@@ -1,23 +1,15 @@
 import secure_context
 import network_protocol
 import socket
+import peer_ip
 
 class ServerSideConnection(object):
 
-	def __init__(self, peer_name):
-		# Just running locally, so the IP is always this
-		ip = '127.0.0.1'
-		# Set the portno based on the peer we're using
-		if(peer_name == 'Jack'):
-			portno = 5571
-		elif(peer_name == 'Jane'):
-			portno = 5572
-		elif(peer_name == 'Joe'):
-			portno = 5573
-		else:
-			print("Valid users are: Jack, Jane, or Joe")
+	def __init__(self, peer_name, password):
+		hostlocation = peer_ip.getHostLocation(peer_name)
+
 		self.secure_socket = secure_context.createListeningServerSocket(
-		 		peer_name, ip, portno)
+		 		peer_name, hostlocation[0], int(hostlocation[1]), password)
 
 	# Accepts the next connection. Must be called before send or recv
 	def nextConnection(self):

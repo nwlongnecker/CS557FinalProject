@@ -4,9 +4,9 @@ import socket
 
 class ClientSideConnection(object):
 
-	def __init__(self, peer_name, ip, portno):
+	def __init__(self, peer_name, ip, portno, password = None):
 		self.secure_socket = secure_context.createConnectedClientSocket(
-	 		peer_name, ip, portno)
+	 		peer_name, ip, portno, password)
 
 	def send(self, message):
 		network_protocol.send(self.secure_socket, message)

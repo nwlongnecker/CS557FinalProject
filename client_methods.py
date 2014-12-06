@@ -5,28 +5,19 @@ import random
 	
 def ask_question(peer_name):
 
-	print('What host would you like to ask the question of?')
-	host_input = input()
-	host_location = None
-	# Look up the host location in the peer_ip map
-	for hostname, host in peer_ip.peer_map.items():
-		name = str(eval(hostname)[4][0][1])
-		if(host_input == name):
-			host_location = host
-	if(host_location == None):
-		print("Host not found")
-		return
+	host_input = 'InviteTracker'
+	host_location = peer_ip.getHostLocation(host_input)
 
 	#Question string should not have any network_protocol.SEPARATOR in it. (No semicolons)
-	question = "Am I invited to the party?"
-	print("Asking:", question)
+	question = 'student('+ input('Ask if who is a student? ') + ')'
+	print('Asking:', question)
 
 	answer = send_question(peer_name, question, host_location)
 	# print the response
 	if(answer):
-		print(question, "->", "Yes")
+		print(question, '->', 'Yes')
 	else:
-		print(question, "->", "No")
+		print(question, '->', 'No')
 
 def send_question(peer_name, question, host_location):
 

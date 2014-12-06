@@ -3,13 +3,14 @@ import socket
 
 
 # Create a secure context for all socket communication
-def createSecureContext(peer_name) :
+def createSecureContext(peer_name, pass_word) :
 	# Only allow TLS 1.2 (Most secure, requires OpenSSL 1.0.1)
 	secure_context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
 	# Use this peer's certificate and key for authentication
 	secure_context.load_cert_chain(
-		'CA/' + peer_name + '/' + peer_name + '.crt',
-		'CA/' + peer_name + '/' + peer_name + '.key')
+		'entities/' + peer_name + '/' + peer_name + '.crt',
+		keyfile = 'entities/' + peer_name + '/' + peer_name + '.key',
+		password = pass_word)
 	# Only recognize peers signed by the CA
 	secure_context.load_verify_locations(
 		'CA/DistFileSysCA/signing-ca-1.crt')
@@ -20,9 +21,9 @@ def createSecureContext(peer_name) :
 	return secure_context
 
 # Create a connection for a client. Ready to send when it returns
-def createConnectedClientSocket(peer_name, hostip, portno):
+def createConnectedClientSocket(peer_name, hostip, portno, password):
 	# Create a secure context for this connection
-	secure_context = createSecureContext(peer_name)
+	secure_context = createSecureContext(peer_name, password)
 	# Create a socket in the secure context
 	secure_socket = secure_context.wrap_socket(socket.socket(), server_side = False)
 
@@ -33,9 +34,9 @@ def createConnectedClientSocket(peer_name, hostip, portno):
 	return secure_socket
 
 # Create a listening socket for the server. Ready to accept when it returns
-def createListeningServerSocket(peer_name, ip, portno):
+def createListeningServerSocket(peer_name, ip, portno, password):
 	# Create a secure context for this connection
-	secure_context = createSecureContext(peer_name)
+	secure_context = createSecureContext(peer_name, password)
 	# Load Diffie Helman key generation parameters
 	# so the server can use Diffie Helman key exchange
 	# file generated using:
