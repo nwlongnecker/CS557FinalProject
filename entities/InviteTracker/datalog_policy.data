@@ -1,3 +1,16 @@
-student(X) <= isWPIStudent(X)
-student(X) <= isClarkStudent(X)
-student(X) <= isHolyCrossStudent(X)
+student(X) <= WPIStudent(X)
+student(X) <= ClarkStudent(X)
+student(X) <= HolyCrossStudent(X)
+
+invited(X, WPI, ACM) <= student(X) & ACMMember(X)
+invited(X, WPI, UPE) <= WPIStudent(X) & UPEMember(X)
+
+invited(X, Clark, ACM) <= ACMMember(X)
+invited(X, Clark, UPE) <= Student(X) & UPEMember(X)
+
+invited(X, HolyCross, ACM) <= HolyCrossStudent(X) & ACMMember(X)
+invited(X, HolyCross, UPE) <= HolyCrossStudent(X) & UPEMember(X)
+
+ACMMember(X) <= WPIACMMember(X)
+ACMMember(X) <= ClarkACMMember(X)
+ACMMember(X) <= HolyCrossACMMember(X)

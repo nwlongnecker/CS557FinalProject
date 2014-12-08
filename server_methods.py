@@ -64,15 +64,22 @@ def sendData(peer_name, net):
 		print('I don\'t have a data file! Sending None instead.')
 		net.send('None')
 
-# Marc dictates format
-# String: "[('predicate', 'arg1', 'arg2', ...), ('predicate', args), ...]""
-# return whatever argument you want for add_facts
+# dataSet: "(('name', 'value'), ...)"
+# trusted_with: {'WPI': 'WPIStudent', ...}
+# returns subset of dataSet that contains only trusted elements
 def prune(dataSet, trusted_with):
-	return dataSet
+    evaluated_data = ast.literal_eval(dataSet)
+    pruned = "("
+    for e in evaluated_data:
+        if e[0] == trusted_with:
+            pruned += "('{0}', '{1}'),".format(e[0], e[1])
+    pruned += ")"
+    return pruned
 
-# [('predicate', args...), ('predicate', args), ...]
+# "(('name', 'value'), ...)"
 # return void
 def add_facts(pruned_data):
-	print('adding data:', pruned_data)
-	evaluated_data = ast.literal_eval(pruned_data)
-	pyDatalog.assert_fact(evaluated_data[0], evaluated_data[1])
+    print('adding data:', pruned_data)
+    evaluated_data = ast.literal_eval(pruned_data)
+    for entry in evaluated_data:
+        pyDatalog.assert_fact(entry[0], entry[1])

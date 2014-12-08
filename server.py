@@ -7,7 +7,7 @@ peer_name = parse_params.getUsername(server_side = True)
 user_password = parse_params.getPassword()
 net = server_side_connection.ServerSideConnection(peer_name = peer_name, password = user_password)
 
-print('Server Started, Waiting for connections...')
+print("Server {0} Started, Waiting for connections...".format(peer_name))
 
 while True:
 	net.nextConnection()

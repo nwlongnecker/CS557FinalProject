@@ -26,7 +26,9 @@ peer_map = {
 	"((('countryName', 'US'),), (('stateOrProvinceName', 'Massachusetts'),), (('organizationName', 'cs557'),), (('organizationName', 'Nathan Longnecker'),), (('commonName', 'WPIUPE'),))":
 	('127.0.0.1', '5579'),
 	"((('countryName', 'US'),), (('stateOrProvinceName', 'Massachusetts'),), (('organizationName', 'cs557'),), (('organizationName', 'Nathan Longnecker'),), (('commonName', 'InviteTracker'),))":
-	('127.0.0.1', '5580')
+	('127.0.0.1', '5580'),
+	"((('countryName', 'US'),), (('stateOrProvinceName', 'Massachusetts'),), (('organizationName', 'cs557'),), (('organizationName', 'Nathan Longnecker'),), (('commonName', 'UPE'),))":
+	('127.0.0.1', '5581'),
 }
 
 def getHostLocation(host_input):

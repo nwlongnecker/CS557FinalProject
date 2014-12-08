@@ -1,1 +1,5 @@
-{'WPI': 'isWPIStudent', 'HolyCross': 'isHolyCrossStudent', 'Clark': 'isClarkStudent'}
+{'WPI': 'WPIStudent', 'WPIACM': 'WPIACMMember',
+ 'HolyCross': 'HolyCrossStudent', 'ClarkACM': 'ClarkACMMember',
+ 'Clark': 'ClarkStudent', 'HolyCrossACM': 'HolyCrossACMMember',
+ 'UPE': 'UPEMember',
+}
