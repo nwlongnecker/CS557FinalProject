@@ -1,0 +1,36 @@
+--------------------
+-- Datalog Policy --
+--------------------
+Student(x) => WPIStudent(x) | ClarkStudent(x) | HCStudent(x);
+WPIStudent(x) => Student(x);
+ClarkStudent(x) => Student(x);
+HCStudent(x) => Student(x);
+
+ACMMember(x) => WPIACMMember(x) | ClarkACMMember(x) | HCACMMember(x);
+WPIACMMember(x) => ACMMember(x);
+ClarkACMMember(x) => ACMMember(x);
+HCACMMember(x) => ACMMember(x);
+
+Invited(x, 'WPI, 'ACM) => Student(x) & ACMMember(x);
+Student(x) & ACMMember(x) => Invited(x, 'WPI, 'ACM);
+
+Invited(x, 'WPI, 'UPE) => WPIStudent(x) & UPEMember(x);
+WPIStudent(x) & UPEMember(x) => Invited(x, 'WPI, 'UPE);
+
+Invited(x, 'Clark, 'ACM) => ACMMember(x);
+ACMMember(x) => Invited(x, 'Clark, 'ACM);
+
+Invited(x, 'Clark, 'UPE) => Student(x) & UPEMember(x);
+Student(x) & UPEMember(x) => Invited(x, 'Clark, 'UPE);
+
+Invited(x, 'HC, 'ACM) => HCStudent(x) & ACMMember(x);
+HCStudent(x) & ACMMember(x) => Invited(x, 'HC, 'ACM);
+
+Invited(x, 'HC, 'UPE) => HCStudent(x) & UPEMember(x);
+HCStudent(x) & UPEMember(x) => Invited(x, 'HC, 'UPE);
+
+-----------
+-- Query --
+-----------
+Invited('UnwelcomeGuest, 'HC, 'ACM);
+HCACMMember('UnwelcomeGuest) => Falsehood;

@@ -1,0 +1,53 @@
+--------------
+-- Ontology --
+--------------
+EDB_WPIStudent(x) => EDB_Student(x);
+EDB_ClarkStudent(x) => EDB_Student(x);
+EDB_HCStudent(x) => EDB_Student(x);
+
+EDB_WPIACMMember(x) => EDB_ACMMember(x);
+EDB_ClarkACMMember(x) => EDB_ACMMember(x);
+EDB_HCACMMember(x) => EDB_ACMMember(x);
+
+---------------
+-- Program A --
+---------------
+EDB_Student(x) & EDB_ACMMember(x) => OUTPUT_Invited(x, 'WPI, 'ACM);
+
+EDB_WPIStudent(x) & EDB_UPEMember(x) => OUTPUT_Invited(x, 'WPI, 'UPE);
+
+EDB_ACMMember(x) => OUTPUT_Invited(x, 'Clark, 'ACM);
+
+EDB_Student(x) & EDB_UPEMember(x) => OUTPUT_Invited(x, 'Clark, 'UPE);
+
+EDB_HCStudent(x) & EDB_ACMMember(x) => OUTPUT_Invited(x, 'HC, 'ACM);
+
+EDB_HCStudent(x) & EDB_UPEMember(x) => OUTPUT_Invited(x, 'HC, 'UPE);
+
+---------------
+-- Program B --
+---------------
+--EDB_Student(x) & EDB_ACMMember(x) => OUTPUT_Invited(x, 'WPI, 'ACM);
+exists p. 'PERSON=p;
+EDB_Student('PERSON) & EDB_ACMMember('PERSON);
+EXPECT_Invited('PERSON, 'WPI, 'ACM);
+
+--EDB_WPIStudent(x) & EDB_UPEMember(x) => OUTPUT_Invited(x, 'WPI, 'UPE);
+EDB_WPIStudent('PERSON) & EDB_UPEMember('PERSON);
+EXPECT_Invited('PERSON, 'WPI, 'UPE);
+
+--EDB_ACMMember(x) => OUTPUT_Invited(x, 'Clark, 'ACM);
+EDB_ACMMember('PERSON);
+EXPECT_Invited('PERSON, 'Clark, 'ACM);
+
+--EDB_Student(x) & EDB_UPEMember(x) => OUTPUT_Invited(x, 'Clark, 'UPE);
+EDB_Student('PERSON) & EDB_UPEMember('PERSON);
+EXPECT_Invited('PERSON, 'Clark, 'UPE);
+
+--EDB_HCStudent(x) & EDB_HCACMMember(x) => OUTPUT_Invited(x, 'HC, 'ACM);
+EDB_HCStudent('PERSON) & EDB_HCACMMember('PERSON);
+EXPECT_Invited('PERSON, 'HC, 'ACM);
+
+--EDB_HCStudent(x) & EDB_UPEMember(x) => OUTPUT_Invited(x, 'HC, 'UPE);
+EDB_HCStudent('PERSON) & EDB_UPEMember('PERSON);
+EXPECT_Invited('PERSON, 'HC, 'UPE);
