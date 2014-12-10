@@ -27,6 +27,7 @@ def answerQuestion(peer_name, net, user_password):
 
 	pyDatalog.load(fileIO.readFile(policy_filename))
 
+	print("Asking question: " + queryList[0])
 	query_result = pyDatalog.ask(queryList[0]);
 	print('Query result:',query_result)
 	if(query_result != None):

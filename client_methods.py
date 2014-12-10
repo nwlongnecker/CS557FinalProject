@@ -9,11 +9,11 @@ def ask_question(peer_name):
 	host_location = peer_ip.getHostLocation(host_input)
 
 	student_name = input('Student\'s name (Ryan, Joey, Goliath, ...): ')
-	student_school = input('Student\'s school (WPI, HolyCross, Clark): ')
-	student_club = input('Student\'s club (ACM, UPE): ')
+	student_school = input('Student\'s school (wpi, holycross, clark): ')
+	student_club = input('Student\'s club (acm, upe): ')
 
 	#Question string should not have any network_protocol.SEPARATOR in it. (No semicolons)
-	question = 'invited(' + student_name + ',' + student_school + ',' + student_club + ')'
+	question = "invited('" + student_name + "','" + student_school + "','" + student_club + "')"
 	print('Asking:', question)
 
 	answer = send_question(peer_name, question, host_location)

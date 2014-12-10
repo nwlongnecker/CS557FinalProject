@@ -2,14 +2,14 @@ student(X) <= WPIStudent(X)
 student(X) <= ClarkStudent(X)
 student(X) <= HolyCrossStudent(X)
 
-invited(X, WPI, ACM) <= WPIStudent(X) & ACMMember(X)
-invited(X, WPI, UPE) <= WPIStudent(X) & UPEMember(X)
+invited(X, wpi, acm) <= WPIStudent(X) & ACMMember(X)
+invited(X, wpi, upe) <= WPIStudent(X) & UPEMember(X)
 
-invited(X, Clark, ACM) <= ACMMember(X)
-invited(X, Clark, UPE) <= Student(X) & UPEMember(X)
+invited(X, clark, acm) <= ACMMember(X)
+invited(X, clark, upe) <= student(X) & UPEMember(X)
 
-invited(X, HolyCross, ACM) <= HolyCrossStudent(X) & ACMMember(X)
-invited(X, HolyCross, UPE) <= HolyCrossStudent(X) & UPEMember(X)
+invited(X, holycross, acm) <= HolyCrossStudent(X) & ACMMember(X)
+invited(X, holycross, upe) <= HolyCrossStudent(X) & UPEMember(X)
 
 ACMMember(X) <= WPIACMMember(X)
 ACMMember(X) <= ClarkACMMember(X)
