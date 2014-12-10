@@ -8,8 +8,12 @@ def ask_question(peer_name):
 	host_input = 'InviteTracker'
 	host_location = peer_ip.getHostLocation(host_input)
 
+	student_name = input('Student\'s name (Ryan, Joey, Goliath, ...): ')
+	student_school = input('Student\'s school (WPI, HolyCross, Clark): ')
+	student_club = input('Student\'s club (ACM, UPE): ')
+
 	#Question string should not have any network_protocol.SEPARATOR in it. (No semicolons)
-	question = 'student('+ input('Ask if who is a student? ') + ')'
+	question = 'invited(' + student_name + ',' + student_school + ',' + student_club + ')'
 	print('Asking:', question)
 
 	answer = send_question(peer_name, question, host_location)

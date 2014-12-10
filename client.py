@@ -11,7 +11,7 @@ print('Hello ', peer_name)
 while True:
 	print()
 	print('What would you like to do?')
-	print('1. Ask Question')
+	print('1. Ask whether a given student is invited to the party')
 	print('2. Exit')
 
 	accepted = False

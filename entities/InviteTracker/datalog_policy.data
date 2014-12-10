@@ -2,7 +2,7 @@ student(X) <= WPIStudent(X)
 student(X) <= ClarkStudent(X)
 student(X) <= HolyCrossStudent(X)
 
-invited(X, WPI, ACM) <= student(X) & ACMMember(X)
+invited(X, WPI, ACM) <= WPIStudent(X) & ACMMember(X)
 invited(X, WPI, UPE) <= WPIStudent(X) & UPEMember(X)
 
 invited(X, Clark, ACM) <= ACMMember(X)
